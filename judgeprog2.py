@@ -31,7 +31,7 @@ class UnDefined:
         else:
             False
 
-def copyTree(node):
+def copy_tree(node):
     """先通り順でcopy 親子関係はcopyしない"""
     cnode=AnyNode()
     for i in vars(node):
@@ -40,12 +40,12 @@ def copyTree(node):
                 continue
         cnode.__dict__.update({i:node.__dict__[i]})
     for t in node.children:
-        node1=copyTree(t)
+        node1=copy_tree(t)
         node1.parent=cnode
     return cnode
 
 
-def insertChild(parentNode, num, nodelist=[]):
+def insert_child(parentNode, num, nodelist=[]):
     """
     parentNode=子どもの挿入を行いたいノード
     num=子どもを挿入したい位置
@@ -58,7 +58,7 @@ def insertChild(parentNode, num, nodelist=[]):
         target.parent=None
         stack.append(target)
     for i in nodelist:
-        node=copyTree(i)
+        node=copy_tree(i)
         node.parent=parentNode
     for _ in range(len(stack)):
         j=stack.pop()
@@ -137,14 +137,14 @@ def compare_nodes(node1,node2):
     logging.debug(f"compare_nodes return True\n")
     return True
 
-def checkNewfunc(node1,node2):#node2がnewfuncを持つと仮定
+def check_new_func(node1,node2):#node2がnewfuncを持つと仮定
     logging.debug(f"checkNewfunc\n({node1},{node2})\n")
     if node2.classname=="FunctionDef":
         return node2
     result1=False
     for i in node2.children: #funcdefじゃなかったら他のノードを探索
         if node2.children!=[]:
-            result1=checkNewfunc(node1,i)
+            result1=check_new_func(node1,i)
         if result1: #ノードが見つかったら探索打ち切り
             result2=search.find(node1, lambda node: node.name == result1.name)#名前が一致する関数がもう１つの木にないか探索
             if result2: 
@@ -153,7 +153,7 @@ def checkNewfunc(node1,node2):#node2がnewfuncを持つと仮定
                 break#もし一致するFunctionDefはもう１つの木になければその関数が新しいものと判定
     return result1
         
-def checkFuncCall(name,node,callList=[]):
+def check_func_call(name,node,callList=[]):
     """
     name:新たに定義された関数の名前
     node:探索対象ノード
@@ -166,10 +166,10 @@ def checkFuncCall(name,node,callList=[]):
                 return callList
     else:
         for i in node.children: #再帰探索
-            callnode=checkFuncCall(name,i)
+            callnode=check_func_call(name,i)
     return callList
 
-def checkFuncbody(body,node):#tryerror付加予定
+def check_func_body(body,node):#tryerror付加予定
     logging.debug(f"checkFuncbody\n({body},{node})\n")
     flag=0
     co=0
@@ -187,10 +187,10 @@ def checkFuncbody(body,node):#tryerror付加予定
 
 def check_and_modify_Extract(t1,t2):
     logging.debug(f"checkExtract\n({t1},{t2})\n")
-    newfuncnode=checkNewfunc(t1,t2) #新たに定義された関数の定義木を代入
+    newfuncnode=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
     if not newfuncnode:
         return False
-    calltreeList=checkFuncCall(newfuncnode.name,t2)
+    calltreeList=check_func_call(newfuncnode.name,t2)
     logging.info(f"calltreeList=\n{calltreeList}\n")
     if calltreeList==[]: #新たに定義された関数の定義を発見
         return False
@@ -203,7 +203,7 @@ def check_and_modify_Extract(t1,t2):
 
     temp=copy.deepcopy(body)
 
-    bodytree=checkFuncbody(temp,t1)
+    bodytree=check_func_body(temp,t1)
 
     if not bodytree:
         return False#上で発見した関数のボディを削除された部分木の中から発見
@@ -214,7 +214,7 @@ def check_and_modify_Extract(t1,t2):
         temp=exprnode.parent
         insertNum=temp.children.index(exprnode)
         exprnode.parent=None
-        insertChild(temp, insertNum, body)
+        insert_child(temp, insertNum, body)
 
     return True
 
