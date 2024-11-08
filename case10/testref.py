@@ -1,0 +1,19 @@
+a=1
+b=2
+c=a+b
+d=a-b
+e=a*b
+f=a/b
+
+def makeTuple():
+    t=(d,e,f)
+    print(t)
+
+print(c)
+
+list=[]
+list.append(a)
+print(list)
+
+dic={"a":a,"b":b}
+print(dic)

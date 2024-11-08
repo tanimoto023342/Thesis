@@ -1,0 +1,2624 @@
+INFO:root:program started
+
+INFO:root:start making AST1 to anytree
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Module object at 0x0000027DF02AA890>,
+parent=None)
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Module object at 0x0000027DF02AA890>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AA860>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AA860>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA830>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA830>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.List object at 0x0000027DF02AA800>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.List object at 0x0000027DF02AA800>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA7D0>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA7D0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AA7A0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AA7A0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA770>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA770>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA740>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA740>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.For object at 0x0000027DF02AA710>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.For object at 0x0000027DF02AA710>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA6E0>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA6E0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA6B0>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA6B0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.AugAssign object at 0x0000027DF02AA680>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.AugAssign object at 0x0000027DF02AA680>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA650>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA650>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Add object at 0x0000027DEFC6C310>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Add object at 0x0000027DEFC6C310>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA620>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA620>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AA5F0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AA5F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AA5C0>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AA5C0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA590>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA590>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA560>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA560>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AA530>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AA530>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AA500>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AA500>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Attribute object at 0x0000027DF02AA4D0>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Attribute object at 0x0000027DF02AA4D0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA4A0>,
+parent=AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA4A0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA470>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA470>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=1)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=1)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AA440>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AA440>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA410>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA410>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA3E0>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA3E0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.For object at 0x0000027DF02AA3B0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.For object at 0x0000027DF02AA3B0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA380>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA380>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA350>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA350>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.AugAssign object at 0x0000027DF02AA320>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.AugAssign object at 0x0000027DF02AA320>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA2F0>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA2F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Add object at 0x0000027DEFC6C310>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Add object at 0x0000027DEFC6C310>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA2C0>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA2C0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AA290>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AA290>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AA260>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AA260>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA230>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA230>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA200>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA200>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AA1D0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AA1D0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA1A0>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA1A0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.BinOp object at 0x0000027DF02AA170>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.BinOp object at 0x0000027DF02AA170>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA140>,
+parent=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA140>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Add object at 0x0000027DEFC6C310>,
+parent=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Add object at 0x0000027DEFC6C310>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.List object at 0x0000027DF02AA110>,
+parent=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.List object at 0x0000027DF02AA110>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA0E0>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA0E0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA0B0>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA0B0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AA080>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AA080>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AA050>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AA050>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AA020>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AA020>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.For object at 0x0000027DF02A9FF0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.For object at 0x0000027DF02A9FF0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02A9FC0>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02A9FC0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02A9F90>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02A9F90>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.AugAssign object at 0x0000027DF02A9F60>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.AugAssign object at 0x0000027DF02A9F60>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02A9F30>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02A9F30>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Add object at 0x0000027DEFC6C310>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Add object at 0x0000027DEFC6C310>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02A9F00>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02A9F00>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02A9ED0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02A9ED0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02A9EA0>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02A9EA0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02A9E70>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02A9E70>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02A9E40>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02A9E40>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+INFO:root:start making AST2 to anytree
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Module object at 0x0000027DF02AB2B0>,
+parent=None)
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Module object at 0x0000027DF02AB2B0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.FunctionDef object at 0x0000027DF02AB280>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.FunctionDef object at 0x0000027DF02AB280>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.arguments object at 0x0000027DF02AB250>,
+parent=AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.arguments object at 0x0000027DF02AB250>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='arguments', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='arguments', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AB220>,
+parent=AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AB220>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AB1F0>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AB1F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AB1C0>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AB1C0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.For object at 0x0000027DF02AB190>,
+parent=AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.For object at 0x0000027DF02AB190>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AB160>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AB160>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AB130>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AB130>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.AugAssign object at 0x0000027DF02AB100>,
+parent=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.AugAssign object at 0x0000027DF02AB100>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AB0D0>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AB0D0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Add object at 0x0000027DEFC6C310>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Add object at 0x0000027DEFC6C310>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AB0A0>,
+parent=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AB0A0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AB070>,
+parent=AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AB070>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AB040>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AB040>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AB010>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AB010>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AAFE0>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AAFE0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AAFB0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AAFB0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AAF80>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AAF80>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.List object at 0x0000027DF02AAF50>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.List object at 0x0000027DF02AAF50>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AAF20>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AAF20>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AAEF0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AAEF0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AAEC0>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AAEC0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AAE90>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AAE90>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AAE60>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AAE60>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AAE30>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AAE30>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Attribute object at 0x0000027DF02AAE00>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Attribute object at 0x0000027DF02AAE00>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AADD0>,
+parent=AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AADD0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AADA0>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AADA0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=1)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=1)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AAD70>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AAD70>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AAD40>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AAD40>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AAD10>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AAD10>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Assign object at 0x0000027DF02AACE0>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Assign object at 0x0000027DF02AACE0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AACB0>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AACB0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Store object at 0x0000027DEFC6C4F0>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Store object at 0x0000027DEFC6C4F0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.BinOp object at 0x0000027DF02AAC80>,
+parent=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.BinOp object at 0x0000027DF02AAC80>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AAC50>,
+parent=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AAC50>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Add object at 0x0000027DEFC6C310>,
+parent=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Add object at 0x0000027DEFC6C310>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.List object at 0x0000027DF02AAC20>,
+parent=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.List object at 0x0000027DF02AAC20>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AABF0>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AABF0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Constant object at 0x0000027DF02AABC0>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Constant object at 0x0000027DF02AABC0>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Expr object at 0x0000027DF02AAB90>,
+parent=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Expr object at 0x0000027DF02AAB90>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Call object at 0x0000027DF02AAB60>,
+parent=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Call object at 0x0000027DF02AAB60>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Name object at 0x0000027DF02AAB30>,
+parent=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Name object at 0x0000027DF02AAB30>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree
+(ast_node=<ast.Load object at 0x0000027DEFC6C550>,
+parent=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:ast_to_anytree_node(astNode=<ast.Load object at 0x0000027DEFC6C550>)
+
+DEBUG:root:ast_to_anytree_node return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='printListSum', name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+DEBUG:root:convert_ast_to_anytree return 
+AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)
+
+INFO:root:finished making anytree
+
+INFO:root:start comparing tree
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return False
+
+INFO:root:finished comparing tree
+
+INFO:root:compare_nodes(Module,Module)
+=False
+
+INFO:root:start checking Extract
+
+DEBUG:root:checkExtract
+(AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined),AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkNewfunc
+(AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined),AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkNewfunc
+(AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined),AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='FunctionDef', func=UnDefined, id=UnDefined, name='printListSum', value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='arguments', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:checkFuncCall
+(printListSum,AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+INFO:root:calltreeList=
+[AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)]
+
+DEBUG:root:checkFuncbody
+([AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)],AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes retun False
+pair:{'classname': 'Name', 'name': UnDefined, 'id': 'list', 'value': UnDefined, 'func': UnDefined, 'arg': UnDefined, '_NodeMixin__children': [AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)], '_NodeMixin__parent': AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)}
+{'classname': 'Name', 'name': UnDefined, 'id': 'sum', 'value': UnDefined, 'func': UnDefined, 'arg': UnDefined, '_NodeMixin__children': [AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)], '_NodeMixin__parent': AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined)}
+
+DEBUG:root:compare_nodes return False
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+INFO:root:finished checking Extract
+
+INFO:root:checkExtract(Module,Module)
+=True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Module', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Attribute', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=1), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=1))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='BinOp', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='List', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=2))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=3))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Assign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0), 
+node2=AnyNode(arg=UnDefined, classname='Constant', func=UnDefined, id=UnDefined, name=UnDefined, value=0))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='For', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='list', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='AugAssign', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Store', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Add', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='i', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Expr', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Call', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='print', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Name', func=UnDefined, id='sum', name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes
+(node1=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined), 
+node2=AnyNode(arg=UnDefined, classname='Load', func=UnDefined, id=UnDefined, name=UnDefined, value=UnDefined))
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+DEBUG:root:compare_nodes return True
+
+INFO:root:program finished
+
