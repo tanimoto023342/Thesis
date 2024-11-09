@@ -114,7 +114,7 @@ def compare_nodes(node1,node2):
                 (i=="_NodeMixin__parent") |
                 (j=="_NodeMixin__parent") ):
                 continue
-            if i!=j or c1[i]!=c2[j]:
+            if (i!=j) | (c1[i]!=c2[j]):
                 logging.debug(f"compare_nodes retun False\npair:{c1}\n{c2}\n")
                 return False
     else:
@@ -278,7 +278,7 @@ def main():
 
     UniqueDotExporter(tree1, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree1after.png")
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2after.png")
-    if tf and compare_nodes(tree1,tree2):
+    if tf & compare_nodes(tree1,tree2):
         print("Stractual Match",end='')
     else:
         print("No Match",end='')
