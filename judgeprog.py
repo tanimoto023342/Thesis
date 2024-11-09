@@ -171,16 +171,21 @@ def check_func_call(name,node,callList=[]):
 
 def check_func_body(body,node):#tryerror付加予定
     logging.debug(f"checkFuncbody\n({body},{node})\n")
+
     flag=0
+    iter_body=0
+
     for i in node.children:
-        if compare_nodes(i,body[0]):
-            body.pop(0)
+        if compare_nodes(i,body[iter_body]):
+            iter_body+=1
             flag=1
-            if body==[]:
+            if iter_body==len(body):
                 return True
         else:
             if flag==1:
-                return False
+                iter_body=0
+        if check_func_body(body,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
+            return True
     return False
 
 def check_and_modify_extract(t1,t2):
