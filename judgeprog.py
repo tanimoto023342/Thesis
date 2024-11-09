@@ -185,7 +185,7 @@ def check_func_body(body,node):#tryerror付加予定
                 return False
     return False
 
-def check_and_modify_Extract(t1,t2):
+def check_and_modify_extract(t1,t2):
     logging.debug(f"checkExtract\n({t1},{t2})\n")
     newfuncnode=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
     if not newfuncnode:
@@ -256,7 +256,7 @@ def main():
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: 'label="%s"' % (n.classname)).to_picture("tree2.png")
 
     logging.info("start checking Extract\n")
-    tf=check_and_modify_Extract(tree1,tree2)
+    tf=check_and_modify_extract(tree1,tree2)
     logging.info("finished checking Extract\n")
     logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={tf}\n")
 
