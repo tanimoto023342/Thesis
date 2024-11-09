@@ -35,8 +35,8 @@ def copy_tree(node):
     """先通り順でcopy 親子関係はcopyしない"""
     cnode=AnyNode()
     for i in vars(node):
-        if (i=="_NodeMixin__children" or
-            i=="_NodeMixin__parent"):
+        if ((i=="_NodeMixin__children") |
+            (i=="_NodeMixin__parent")):
                 continue
         cnode.__dict__.update({i:node.__dict__[i]})
     for t in node.children:
@@ -109,10 +109,10 @@ def compare_nodes(node1,node2):
         c1=node1.__dict__
         c2=node2.__dict__
         for i,j in zip(c1,c2):#辞書の各要素(=ノードの変数)が一致しているか確認
-            if (i=="_NodeMixin__children" or
-                j=="_NodeMixin__children" or
-                i=="_NodeMixin__parent" or
-                j=="_NodeMixin__parent" ):
+            if ((i=="_NodeMixin__children") |
+                (j=="_NodeMixin__children") |
+                (i=="_NodeMixin__parent") |
+                (j=="_NodeMixin__parent") ):
                 continue
             if i!=j or c1[i]!=c2[j]:
                 logging.debug(f"compare_nodes retun False\npair:{c1}\n{c2}\n")
@@ -226,8 +226,8 @@ def attr_writer(node):
     node_attr=vars(node)
 
     for i in node_attr:
-        if (i=="_NodeMixin__children" or
-            i=="_NodeMixin__parent"):
+        if ((i=="_NodeMixin__children") |
+            (i=="_NodeMixin__parent")):
             continue
         if node_attr[i] is not UnDefined():
             text_in_label+=f"{i}:{node_attr[i]}\n"
