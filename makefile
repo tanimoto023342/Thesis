@@ -8,9 +8,9 @@ main:
 	progref=$$case/testref.py; \
     exp=$$case/exp.txt; \
     echo $$case; \
-	python judgeprog2.py $$prog $$progref > $$case/out.txt; \
+	python judgeprog.py $$prog $$progref > $$case/out.txt; \
 	diff -B -w $$case/out.txt $$exp; \
 	done
 
 unit:
-	python judgeprog2.py test.py testref.py
+	python judgeprog.py test.py testref.py
