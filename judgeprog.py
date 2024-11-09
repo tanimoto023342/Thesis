@@ -17,7 +17,6 @@ class UnDefined:
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
         return cls.__instance
-
         
     def __repr__(self):
         return "UnDefined"
@@ -166,7 +165,7 @@ def check_func_call(name,node,callList=[]):
                 return callList
     else:
         for i in node.children: #再帰探索
-            callnode=check_func_call(name,i)
+            check_func_call(name,i)
     return callList
 
 def check_func_body(body,node):#tryerror付加予定
