@@ -152,21 +152,24 @@ def check_new_func(node1,node2):#node2がnewfuncを持つと仮定
                 break#もし一致するFunctionDefはもう１つの木になければその関数が新しいものと判定
     return result1
         
-def check_func_call(name,node,callList=[]):
+def check_func_call(name,node,call_dict={}):
     """
     name:新たに定義された関数の名前
     node:探索対象ノード
     """
-    logging.debug(f"checkFuncCall\n({name},{node})\n")
+    if call_dict == {}: #call_dictの初期化
+        call_dict[name]=[]
+
+    logging.debug(f"check_func_call\n({name},{node})\n")
     if node.classname=="Call":
         for i in node.children:
             if i.id == name:
-                callList.append(node)
-                return callList
+                call_dict[name].append(node)
+                return call_dict
     else:
         for i in node.children: #再帰探索
             check_func_call(name,i)
-    return callList
+    return call_dict
 
 def check_func_body(body,node):#tryerror付加予定
     logging.debug(f"checkFuncbody\n({body},{node})\n")
@@ -192,9 +195,9 @@ def check_and_modify_extract(t1,t2):
     newfuncnode=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
     if not newfuncnode:
         return False
-    calltreeList=check_func_call(newfuncnode.name,t2)
-    logging.info(f"calltreeList=\n{calltreeList}\n")
-    if calltreeList==[]: #新たに定義された関数の定義を発見
+    call_tree_dict=check_func_call(newfuncnode.name,t2)
+    logging.info(f"call_tree_dict=\n{call_tree_dict}\n")
+    if call_tree_dict=={}: #新たに定義された関数の定義を発見
         return False
     
     #関数のボディを抽出する処理
@@ -211,7 +214,7 @@ def check_and_modify_extract(t1,t2):
         return False#上で発見した関数のボディを削除された部分木の中から発見
 
     newfuncnode.parent=None
-    for n in calltreeList:
+    for n in call_tree_dict[newfuncnode.name]:
         exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
         temp=exprnode.parent
         insertNum=temp.children.index(exprnode)
