@@ -218,6 +218,9 @@ def check_and_modify_extract(t1,t2):
 
     return True
 
+def attr_writer(n):
+    return 'label="%s"' % (n.classname)
+
 def main():
     if len(sys.argv) > 2:
         filename1 = sys.argv[1]
@@ -252,16 +255,16 @@ def main():
         pass
 
     # ツリーを表示
-    UniqueDotExporter(tree1, nodeattrfunc=lambda n: 'label="%s"' % (n.classname)).to_picture("tree1.png")
-    UniqueDotExporter(tree2, nodeattrfunc=lambda n: 'label="%s"' % (n.classname)).to_picture("tree2.png")
+    UniqueDotExporter(tree1, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree1.png")
+    UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2.png")
 
     logging.info("start checking Extract\n")
     tf=check_and_modify_extract(tree1,tree2)
     logging.info("finished checking Extract\n")
     logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={tf}\n")
 
-    UniqueDotExporter(tree1, nodeattrfunc=lambda n: 'label="%s"' % (n.classname)).to_picture("tree1after.png")
-    UniqueDotExporter(tree2, nodeattrfunc=lambda n: 'label="%s"' % (n.classname)).to_picture("tree2after.png")
+    UniqueDotExporter(tree1, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree1after.png")
+    UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2after.png")
     if tf and compare_nodes(tree1,tree2):
         print("Stractual Match",end='')
     else:
