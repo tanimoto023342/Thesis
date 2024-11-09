@@ -218,8 +218,18 @@ def check_and_modify_extract(t1,t2):
 
     return True
 
-def attr_writer(n):
-    return 'label="%s"' % (n.classname)
+def attr_writer(node):
+    text_in_label=""
+    node_attr=vars(node)
+
+    for i in node_attr:
+        if (i=="_NodeMixin__children" or
+            i=="_NodeMixin__parent"):
+            continue
+        if node_attr[i] is not UnDefined():
+            text_in_label+=f"{i}:{node_attr[i]}\n"
+
+    return 'label=\"'+text_in_label+'\"'
 
 def main():
     if len(sys.argv) > 2:
