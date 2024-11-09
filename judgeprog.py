@@ -172,9 +172,7 @@ def check_func_call(name,node,callList=[]):
 def check_func_body(body,node):#tryerror付加予定
     logging.debug(f"checkFuncbody\n({body},{node})\n")
     flag=0
-    co=0
     for i in node.children:
-        co+=1
         if compare_nodes(i,body[0]):
             body.pop(0)
             flag=1
