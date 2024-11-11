@@ -139,8 +139,8 @@ def compare_nodes(node1,node2):
 def check_new_func(node1,node2,new_func_dict={}):#node2がnewfuncを持つと仮定
     logging.debug(f"checkNewfunc\n({node1},{node2})\n")
     if node2.classname=="FunctionDef":
-        result2=search.find(node1, filter_=lambda node: node.name == node2.name)#名前が一致する関数がもう１つの木にないか探索
-        if result2:
+        search_result=search.find(node1, filter_=lambda node: node.name == node2.name)#名前が一致する関数がもう１つの木にないか探索
+        if search_result:
             pass
         else:
             return node2
