@@ -46,8 +46,8 @@ def copy_tree(node):
 
 def insert_child(parentNode, num, nodelist=[]):
     """
-    parentNode=子どもの挿入を行いたいノード
-    num=子どもを挿入したい位置
+    parentNode=子どもの挿入を行いたいノード\n
+    num=子どもを挿入したい位置\n
     nodelist=挿入したいノードのリスト
     """
     stack=[]
@@ -154,7 +154,7 @@ def check_new_func(node1,node2):#node2がnewfuncを持つと仮定
         
 def check_func_call(name,node,call_dict={}):
     """
-    name:新たに定義された関数の名前
+    name:新たに定義された関数の名前\n
     node:探索対象ノード
     """
     if call_dict == {}: #call_dictの初期化
@@ -168,16 +168,16 @@ def check_func_call(name,node,call_dict={}):
                 return call_dict
     else:
         for i in node.children: #再帰探索
-            check_func_call(name,i)
+            check_func_call(name,i,call_dict)
     return call_dict
 
-def check_func_body(body,node):#tryerror付加予定
-    logging.debug(f"checkFuncbody\n({body},{node})\n")
+def check_func_body(body,tree_node):#tryerror付加予定
+    logging.debug(f"check_func_body\n({body},{tree_node})\n")
 
     flag=0
     iter_body=0
 
-    for i in node.children:
+    for i in tree_node.children:
         if compare_nodes(i,body[iter_body]):
             iter_body+=1
             flag=1
