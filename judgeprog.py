@@ -143,16 +143,14 @@ def check_new_func(node1,node2,new_func_dict={}):#node2がnewfuncを持つと仮
         if search_result:
             pass
         else:
-            return node2
-    new_func=False
+            new_func_dict[node2.name]=node2
+            return new_func_dict
     
     for i in node2.children: #funcdefじゃなかったら他のノードを探索
         if node2.children!=[]:
-            new_func=check_new_func(node1,i,new_func_dict)
-        if new_func: #ノードが見つかったら探索打ち切り
-            break
+            new_func_dict=check_new_func(node1,i,new_func_dict)
 
-    return new_func
+    return new_func_dict
         
 def check_func_call(name,node,call_dict={}):
     """
@@ -199,35 +197,38 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
 
 def check_and_modify_extract(t1,t2):
     logging.debug(f"checkExtract\n({t1},{t2})\n")
-    newfuncnode=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
-    if not newfuncnode:
+    new_func_dict=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
+    if new_func_dict=={}:
         return False
-    call_tree_dict=check_func_call(newfuncnode.name,t2)
+    for new_func_node in new_func_dict.values():
+        call_tree_dict=check_func_call(new_func_node.name,t2)
+    
     logging.info(f"call_tree_dict=\n{call_tree_dict}\n")
     if call_tree_dict=={}: #新たに定義された関数の定義を発見
         return False
     
     #関数のボディを抽出する処理
     body=[]
-    for i in newfuncnode.children:
-        if i.classname!="arguments":
-            body.append(i)
+    for new_func_node in new_func_dict.values():
+        for i in new_func_node.children:
+            if i.classname!="arguments":
+                body.append(i)
 
-    temp=copy.deepcopy(body)
-    t1copy=copy.deepcopy(t1)
+        temp=copy.deepcopy(body)
+        t1copy=copy.deepcopy(t1)
 
-    bodytree=check_func_body({newfuncnode.name:temp},t1copy)
+        bodytree=check_func_body({new_func_node.name:temp},t1copy)
 
-    if not bodytree:
-        return False#上で発見した関数のボディを削除された部分木の中から発見
+        if not bodytree:
+            return False#上で発見した関数のボディを削除された部分木の中から発見
 
-    newfuncnode.parent=None
-    for n in call_tree_dict[newfuncnode.name]:
-        exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
-        temp=exprnode.parent
-        insertNum=temp.children.index(exprnode)
-        exprnode.parent=None
-        insert_child(temp, insertNum, body)
+        new_func_node.parent=None
+        for n in call_tree_dict[new_func_node.name]:
+            exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
+            temp=exprnode.parent
+            insertNum=temp.children.index(exprnode)
+            exprnode.parent=None
+            insert_child(temp, insertNum, body)
 
     return True
 
