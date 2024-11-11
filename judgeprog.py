@@ -136,21 +136,23 @@ def compare_nodes(node1,node2):
     logging.debug(f"compare_nodes return True\n")
     return True
 
-def check_new_func(node1,node2):#node2がnewfuncを持つと仮定
+def check_new_func(node1,node2,new_func_dict={}):#node2がnewfuncを持つと仮定
     logging.debug(f"checkNewfunc\n({node1},{node2})\n")
     if node2.classname=="FunctionDef":
-        return node2
-    result1=False
+        result2=search.find(node1, filter_=lambda node: node.name == node2.name)#名前が一致する関数がもう１つの木にないか探索
+        if result2:
+            pass
+        else:
+            return node2
+    new_func=False
+    
     for i in node2.children: #funcdefじゃなかったら他のノードを探索
         if node2.children!=[]:
-            result1=check_new_func(node1,i)
-        if result1: #ノードが見つかったら探索打ち切り
-            result2=search.find(node1, lambda node: node.name == result1.name)#名前が一致する関数がもう１つの木にないか探索
-            if result2: 
-                continue
-            else:
-                break#もし一致するFunctionDefはもう１つの木になければその関数が新しいものと判定
-    return result1
+            new_func=check_new_func(node1,i,new_func_dict)
+        if new_func: #ノードが見つかったら探索打ち切り
+            break
+
+    return new_func
         
 def check_func_call(name,node,call_dict={}):
     """
