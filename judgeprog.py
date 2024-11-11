@@ -176,16 +176,21 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
 
     flag=0
     iter_body=0
+    delete_tree_list=[]
 
     for i in tree_node.children:
         if compare_nodes(i,body_dict[iter_body]):
             iter_body+=1
             flag=1
+            delete_tree_list.append(i)
             if iter_body==len(body_dict):
+                for j in delete_tree_list:
+                    del j
                 return True
         else:
             if flag==1:
                 iter_body=0
+                delete_tree_list.clear()
         if check_func_body(body_dict,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
             return True
     return False
