@@ -171,22 +171,22 @@ def check_func_call(name,node,call_dict={}):
             check_func_call(name,i,call_dict)
     return call_dict
 
-def check_func_body(body,tree_node):#tryerror付加予定
-    logging.debug(f"check_func_body\n({body},{tree_node})\n")
+def check_func_body(body_dict,tree_node):#tryerror付加予定
+    logging.debug(f"check_func_body\n({body_dict},{tree_node})\n")
 
     flag=0
     iter_body=0
 
     for i in tree_node.children:
-        if compare_nodes(i,body[iter_body]):
+        if compare_nodes(i,body_dict[iter_body]):
             iter_body+=1
             flag=1
-            if iter_body==len(body):
+            if iter_body==len(body_dict):
                 return True
         else:
             if flag==1:
                 iter_body=0
-        if check_func_body(body,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
+        if check_func_body(body_dict,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
             return True
     return False
 
@@ -207,8 +207,9 @@ def check_and_modify_extract(t1,t2):
             body.append(i)
 
     temp=copy.deepcopy(body)
+    t1copy=copy.deepcopy(t1)
 
-    bodytree=check_func_body(temp,t1)
+    bodytree=check_func_body(temp,t1copy)
 
     if not bodytree:
         return False#上で発見した関数のボディを削除された部分木の中から発見
