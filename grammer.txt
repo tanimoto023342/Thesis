@@ -1,0 +1,10 @@
+・式文 (関数や a + 1 のような式 (expression) を文として呼び出すもの)
+• 代入文
+• 累算代入文
+• pass 文
+• break 文
+• continue 文
+• if 文とそれに伴う elif, else 文
+• while 文とそれに伴う else 文
+• for 文とそれに伴う else 文
+• funcdef 文
