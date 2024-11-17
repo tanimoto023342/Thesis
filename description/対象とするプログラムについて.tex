@@ -1,0 +1,192 @@
+\documentclass{jlreq}
+\usepackage{graphicx}
+\usepackage{listings,jvlisting} %日本語のコメントアウトをする場合jvlisting（もしくはjlisting）が必要
+%ここからソースコードの表示に関する設定
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0,
+  xleftmargin=3,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1,
+  lineskip=-0.5ex
+}
+
+\title{判定プログラムの入力の対象とするプログラムについて}
+\author{谷元柊介}
+\date{2024/11/12}
+
+\begin{document}
+    \maketitle
+    \section{入力プログラムの概要}
+        \subsection{入力プログラムとは}
+        ここでいう「入力プログラム」は拡張子が.py であるようなPython ソースファイルのことである. Python ソースファイルとはPython のソースコードが記述されているファイルのことである.
+
+        \subsection{Python ソースコードの構成}
+        Python ソースコードは以下の要素のみで構成される\footnote{このことはPython 言語リファレンスに詳しく記述されている\cite{目次}.}.
+        \begin{itemize}
+            \item if やfor のような\textgt{複合文}
+            \item break やreturn のような\textgt{単純文}
+            \item コメント文
+        \end{itemize}
+        すなわち, Python ソースコードの構成要素は必ず複合文か単純文のどちらかに分類される.
+
+    \section{複合文(compound statement)}
+        \subsection{複合文とは}
+            複合文とは, 1 つ以上の節から構成される文のことである\cite{目次}. ここでいう節はさらにヘッダとスイートの2 つから構成される.
+
+            ヘッダは一意に識別されるキーワードで始まり, コロンで終わる文のことである. スイートは節によって制御される文の集まりである\cite{目次}.
+            
+            \includegraphics[]{ヘッダスイート.png}    
+                
+        \subsection{本研究で扱う複合文}
+            本研究では入力プログラムが複合文をもつ場合, その複合文は以下のいずれかであるとする\footnote{これ以外にも複合文とされる文は存在するが, 現段階では対象としない}.
+            \begin{itemize}
+                \item if 文とそれに伴うelif, else 文
+                \item while 文とそれに伴うelse 文
+                \item for 文とそれに伴うelse 文
+                \item funcdef 文
+            \end{itemize}
+
+    \section{単純文(simple statement)}
+        \subsection{単純文とは}
+            単純文とは, 1 つの論理行に収められる文である\footnote{1 つの論理行に収まらない文だからといって, 必ずしも複合文ではない}. 
+            
+            論理行1 行は, 1 行以上の物理行から構成される. 物理行は行終端コードで区切られた文字列のことを指す.
+
+        \subsection{本研究で扱う単純文}
+            本研究では入力プログラムが単純文をもつ場合, その単純文は以下のいずれかであるとする\footnote{これ以外にも単純文とされる文は存在するが, 現段階では対象としない}.
+            \begin{itemize}
+                \item 式文(関数や$a+1$ のような式(expression)を文として呼び出すもの)
+                \item 代入文
+                \item pass 文
+                \item break 文
+                \item continue 文
+            \end{itemize}
+            \subsubsection{式, 式文(expression)}
+                本研究において, 式および式文は以下のように定義される\footnote{Python の本来の文法として式文に対応するものはstarred\_expression であるが, 本研究では簡略化のためstarred\_expression もexpressionも同一のものとして扱っている}
+                \begin{lstlisting}[caption=式の定義]
+                    expression ::= 
+                        disjunction 'if' disjunction 'else' expression 
+                        | disjunction
+                    disjunction ::=
+                        conjunction ('or' conjunction )+ 
+                        | conjunction
+                    conjunction ::=
+                        inversion ('and' inversion )+ 
+                        | inversion
+                    inversion ::=
+                        'not' inversion 
+                        | comparison
+                    comparison ::=
+                        bitwise_or compare_op_bitwise_or_pair+ 
+                        | bitwise_or
+                    compare_op_bitwise_or_pair ::=
+                        eq_bitwise_or
+                        | noteq_bitwise_or
+                        | lte_bitwise_or
+                        | lt_bitwise_or
+                        | gte_bitwise_or
+                        | gt_bitwise_or
+                        | notin_bitwise_or
+                        | in_bitwise_or
+                        | isnot_bitwise_or
+                        | is_bitwise_or
+                    eq_bitwise_or ::= '==' bitwise_or 
+                    noteq_bitwise_or::=
+                        ('!=' ) bitwise_or 
+                    lte_bitwise_or ::= '<=' bitwise_or 
+                    lt_bitwise_or ::= '<' bitwise_or 
+                    gte_bitwise_or ::= '>=' bitwise_or 
+                    gt_bitwise_or ::= '>' bitwise_or 
+                    notin_bitwise_or ::= 'not' 'in' bitwise_or 
+                    in_bitwise_or ::= 'in' bitwise_or 
+                    isnot_bitwise_or ::= 'is' 'not' bitwise_or 
+                    is_bitwise_or ::= 'is' bitwise_or
+                    bitwise_or ::=
+                         bitwise_or '|' bitwise_xor 
+                        | bitwise_xor
+                    bitwise_xor ::=
+                        bitwise_xor '^' bitwise_and 
+                        | bitwise_and
+                    bitwise_and ::=
+                        bitwise_and '&' shift_expr 
+                        | shift_expr
+                    shift_expr ::=
+                        shift_expr '<<' sum 
+                        | shift_expr '>>' sum 
+                        | sum
+                    sum ::=
+                        sum '+' term 
+                        | sum '-' term 
+                        | term
+                    term ::=
+                        term '*' factor 
+                        | term '/' factor 
+                        | term '//' factor 
+                        | term '%' factor 
+                        | term '@' factor 
+                        | factor
+                    factor ::=
+                        '+' factor 
+                        | '-' factor 
+                        | '~' factor 
+                        | power
+                    power ::=
+                        await_primary '**' factor 
+                        | primary
+                    primary ::=
+                        | primary '.' NAME 
+                        | primary '(' [arguments] ')' 
+                        | primary '[' named_expression ']' 
+                        | atom
+                    named_expression:
+                        | expression !':='
+
+
+                    atom ::=
+                        NAME
+                        | 'True' 
+                        | 'False' 
+                        | 'None' 
+                        | strings
+                        | NUMBER
+                        | (tuple | group)
+                        | list
+                        | (dict | set)
+                        | '...'
+                \end{lstlisting}
+                NAME とは, 変数名, 関数名, クラス名, モジュールやパッケージ名のことを指す. NUMBER はint やfloat といったデータ型のリテラルのことを指す.
+            \subsubsection{引数(arguments)}
+                本研究において, 引数は以下のように定義される.
+                \begin{lstlisting}[caption=代入文の定義,label=fuga]
+                    arguments ::= args [','] &')'
+                    args ::= ','.(expression !':=')+
+                \end{lstlisting}
+            \subsubsection{代入文(assignment statement)}
+                本研究において, 代入文は以下のように定義される
+                \begin{lstlisting}[caption=代入文の定義,label=fuga]
+                    assignment_stmt ::=  
+                        (star_atom "=")+ (expression)
+                        | star_atom augassign ~ expression
+                    augassign ::=
+                        | '+=' | '-=' | '*=' | '@=' | '/=' | '%=' | '&=' | '|=' | '^=' | '<<=' | '>>=' | '**=' | '//='
+                    star_atom ::= NAME
+                \end{lstlisting}
+                                
+    \begin{thebibliography}{temp}
+    \bibitem{目次}
+    Python 言語リファレンス(2024/11/12)
+    
+    https://docs.python.org/ja/3/reference/index.html
+    \end{thebibliography}
+\end{document}
