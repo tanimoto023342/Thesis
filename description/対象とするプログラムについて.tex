@@ -72,6 +72,14 @@
                 \item break 文
                 \item continue 文
             \end{itemize}
+            \subsubsection{前提}
+                以下, この先での文法の定義に際しての前提事項を述べる.
+                \begin{itemize}
+                    \item $e*$ はe というパターンが0 回以上連続することを示す.
+                    \item $e+$ はe というパターンが1 回以上連続することを示す.
+                    \item $e_1 \&e_2$ は$e_1$というパターンの中に, $e_2$というパターンが必ず含まれなければならないことを示す.
+                    \item $e_1 !e_2$ は$e_1$というパターンの中に, $e_2$というパターンが含まれてはならないということを示す.
+                \end{itemize}
             \subsubsection{式, 式文(expression)}
                 本研究において, 式および式文は以下のように定義される\footnote{Python の本来の文法として式文に対応するものはstarred\_expression であるが, 本研究では簡略化のためstarred\_expression もexpressionも同一のものとして扱っている}
                 \begin{lstlisting}[caption=式の定義]
@@ -168,7 +176,7 @@
                 NAME とは, 変数名, 関数名, クラス名, モジュールやパッケージ名のことを指す. NUMBER はint やfloat といったデータ型のリテラルのことを指す.
             \subsubsection{引数(arguments)}
                 本研究において, 引数は以下のように定義される.
-                \begin{lstlisting}[caption=代入文の定義,label=fuga]
+                \begin{lstlisting}[caption=引数の定義,label=fuga]
                     arguments ::= args [','] &')'
                     args ::= ','.(expression !':=')+
                 \end{lstlisting}
@@ -184,7 +192,6 @@
                 \end{lstlisting}
             \subsubsection{pass 文, break 文, continue 文}
                 これらの文には特有の構文要素はなく, "pass", "break", "continue"といったその文字列単体をもって文とみなされる.
-                                
     \begin{thebibliography}{temp}
     \bibitem{目次}
     Python 言語リファレンス(2024/11/12)
