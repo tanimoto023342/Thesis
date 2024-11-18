@@ -44,7 +44,7 @@
         \subsection{複合文とは}
             複合文とは, 1 つ以上の節から構成される文のことである\cite{目次}. ここでいう節はさらにヘッダとスイートの2 つから構成される.
 
-            ヘッダは一意に識別されるキーワードで始まり, コロンで終わる文のことである. スイートは節によって制御される文の集まりである\cite{目次}.
+            ヘッダは, if やwhile といった文法で指定されている一意に識別できるキーワードで始まり, コロンで終わる文のことである. スイートは節によって制御される文の集まりである\cite{目次}.
             
             \includegraphics[]{ヘッダスイート.png}    
                 
@@ -56,7 +56,62 @@
                 \item for 文とそれに伴うelse 文
                 \item funcdef 文
             \end{itemize}
-
+            すなわち, 複合文は以下のように定義される.
+            \begin{lstlisting}[caption=式の定義]
+                compound_stmt ::=
+                    | function_def
+                    | if_stmt
+                    | for_stmt
+                    | while_stmt
+            \end{lstlisting}
+            \subsubsection{if 文}
+                本研究において, if 文は以下のように定義される.
+                \begin{lstlisting}[caption=if 文の定義]
+                    if_stmt ::=
+                        | 'if' named_expression ':' block elif_stmt 
+                        | 'if' named_expression ':' block [else_block] 
+                    elif_stmt ::=
+                        | 'elif' named_expression ':' block elif_stmt 
+                        | 'elif' named_expression ':' block [else_block] 
+                    else_block ::=
+                        | 'else' ':' block
+                    block ::=
+                        | NEWLINE INDENT statements DEDENT 
+                        | simple_stmts
+                \end{lstlisting}
+            \subsubsection{while 文}
+            本研究においてwhile 文は以下のように定義される
+            \begin{lstlisting}[caption=while 文の定義]
+                while_stmt ::=
+                    | 'while' named_expression ':' block [else_block]
+            \end{lstlisting}
+            \subsubsection{for 文}
+            本研究においてfor 文は以下のように定義される.
+            \begin{lstlisting}[caption=for 文の定義]
+                for_stmt ::=
+                    | 'for' star_targets 'in' ~ star_expressions ':' [TYPE_COMMENT] block [else_block]
+            \end{lstlisting}
+            \subsubsection{funcdef 文}
+            本研究においてfuncdef 文は以下のように定義される
+            \begin{lstlisting}[caption=funcdef 文の定義]
+               function_def: 
+                    | function_def_raw
+                function_def_raw:
+                    | 'def' NAME '(' [params] ')' ':' block 
+                params:
+                    | parameters
+                parameters: 
+                    | param_no_default+ param_with_default*  
+                    | param_with_default+ 
+                param_no_default:
+                    | param ',' 
+                    | param 
+                param_with_default:
+                    | param default ',' 
+                    | param default 
+                default: '=' expression
+                param: NAME
+            \end{lstlisting}
     \section{単純文(simple statement)}
         \subsection{単純文とは}
             単純文とは, 1 つの論理行に収められる文である\footnote{1 つの論理行に収まらない文だからといって, 必ずしも複合文ではない}. 
@@ -72,6 +127,15 @@
                 \item break 文
                 \item continue 文
             \end{itemize}
+            すなわち単純文は以下のように定義される.
+            \begin{lstlisting}[caption=式の定義]
+                simple_stmt ::=
+                    | assignment
+                    | expression 
+                    | 'pass' 
+                    | 'break' 
+                    | 'continue' 
+            \end{lstlisting}
             \subsubsection{前提}
                 以下, この先での文法の定義に際しての前提事項を述べる.
                 \begin{itemize}
