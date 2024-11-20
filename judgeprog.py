@@ -275,11 +275,11 @@ def main():
     UniqueDotExporter(tree1).to_picture("tree.png")
 
     logging.info("start comparing tree\n")
-    itti=compare_nodes(tree1,tree2)
+    match_bool=compare_nodes(tree1,tree2)
     logging.info("finished comparing tree\n")
     logging.info(f"compare_nodes({tree1.classname},{tree2.classname})\n={itti}\n")
 
-    if itti == True:
+    if match_bool == True:
         print("Exact Match",end='')
         return
     else:
