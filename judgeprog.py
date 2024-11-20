@@ -295,17 +295,21 @@ def main():
 
     logging.info("start checking Extract\n")
     extract_result=check_extract(tree1,tree2)
-    if extract_result == False:
-        print("No Match",end='')
-        return
-    modify_extract(*extract_result)
-
     logging.info("finished checking Extract\n")
     logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={extract_result}\n")
 
+    if extract_result == False:
+        print("No Match",end='')
+        return
+    
+    modify_extract(*extract_result)
+
     UniqueDotExporter(tree1, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree1after.png")
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2after.png")
-    if (extract_result!=False) & compare_nodes(tree1,tree2):
+
+    modified_tree_match_bool=compare_nodes(tree1,tree2)
+
+    if modified_tree_match_bool==True:
         print("Stractual Match",end='')
     else:
         print("No Match",end='')
