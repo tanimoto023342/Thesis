@@ -101,6 +101,23 @@ def convert_ast_to_anytree(ast_node,parent=None):
     logging.debug(f"convert_ast_to_anytree return \n{node}\n")
     return node
 
+def open_file_and_make_ast(filename1,filename2):
+    with open(filename1, encoding="utf-8") as f1:
+        f1_content=f1.read()
+        parsed_ast1 = ast.parse(f1_content)
+
+    with open(filename2, encoding="utf-8") as f2:
+        f2_content=f2.read()
+        parsed_ast2 = ast.parse(f2_content)
+
+    logging.info("start making AST1 to anytree\n")
+    tree1=convert_ast_to_anytree(parsed_ast1)
+    logging.info("start making AST2 to anytree\n")
+    tree2=convert_ast_to_anytree(parsed_ast2)
+    logging.info("finished making anytree\n")
+
+    return (tree1,tree2)
+
 def compare_nodes(node1,node2):
     logging.debug(f"compare_nodes\n(node1={node1}, \nnode2={node2})\n")
     # ノードの要素が一致しているか確認
@@ -253,17 +270,7 @@ def main():
         print("not enough argument")
         exit(0)
 
-    f1=open(filename1, encoding="utf-8")
-    parsed_ast1 = ast.parse(f1.read())
-
-    f2=open(filename2, encoding="utf-8")
-    parsed_ast2 = ast.parse(f2.read())
-
-    logging.info("start making AST1 to anytree\n")
-    tree1=convert_ast_to_anytree(parsed_ast1)
-    logging.info("start making AST2 to anytree\n")
-    tree2=convert_ast_to_anytree(parsed_ast2)
-    logging.info("finished making anytree\n")
+    tree1,tree2=open_file_and_make_ast(filename1,filename2)
 
     UniqueDotExporter(tree1).to_picture("tree.png")
 
