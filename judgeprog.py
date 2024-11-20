@@ -212,7 +212,17 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
                 return True
     return False
 
-def check_and_modify_extract(t1,t2):
+def modify_extract(new_func_dict, call_tree_dict, body):
+    for new_func_node in new_func_dict.values():
+        new_func_node.parent=None
+        for n in call_tree_dict[new_func_node.name]:
+            exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
+            temp=exprnode.parent
+            insertNum=temp.children.index(exprnode)
+            exprnode.parent=None
+            insert_child(temp, insertNum, body)
+
+def check_extract(t1,t2):
     logging.debug(f"checkExtract\n({t1},{t2})\n")
     new_func_dict=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
     if new_func_dict=={}:
@@ -239,15 +249,11 @@ def check_and_modify_extract(t1,t2):
         if not bodytree:
             return False#上で発見した関数のボディを削除された部分木の中から発見
 
-        new_func_node.parent=None
-        for n in call_tree_dict[new_func_node.name]:
-            exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
-            temp=exprnode.parent
-            insertNum=temp.children.index(exprnode)
-            exprnode.parent=None
-            insert_child(temp, insertNum, body)
-
-    return True
+    result=(new_func_dict, call_tree_dict, body)
+    if result==():
+        return False
+    else:
+        return result
 
 def attr_writer(node):
     text_in_label=""
@@ -272,12 +278,10 @@ def main():
 
     tree1,tree2=open_file_and_make_ast(filename1,filename2)
 
-    UniqueDotExporter(tree1).to_picture("tree.png")
-
     logging.info("start comparing tree\n")
     match_bool=compare_nodes(tree1,tree2)
     logging.info("finished comparing tree\n")
-    logging.info(f"compare_nodes({tree1.classname},{tree2.classname})\n={itti}\n")
+    logging.info(f"compare_nodes({tree1.classname},{tree2.classname})\n={match_bool}\n")
 
     if match_bool == True:
         print("Exact Match",end='')
@@ -290,13 +294,18 @@ def main():
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2.png")
 
     logging.info("start checking Extract\n")
-    extract_bool=check_and_modify_extract(tree1,tree2)
+    extract_result=check_extract(tree1,tree2)
+    if extract_result == False:
+        print("No Match",end='')
+        return
+    modify_extract(*extract_result)
+
     logging.info("finished checking Extract\n")
-    logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={extract_bool}\n")
+    logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={extract_result}\n")
 
     UniqueDotExporter(tree1, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree1after.png")
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2after.png")
-    if extract_bool & compare_nodes(tree1,tree2):
+    if (extract_result!=False) & compare_nodes(tree1,tree2):
         print("Stractual Match",end='')
     else:
         print("No Match",end='')
