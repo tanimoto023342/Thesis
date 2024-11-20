@@ -246,7 +246,7 @@ def attr_writer(node):
     return 'label=\"'+text_in_label+'\"'
 
 def main():
-    if len(sys.argv) > 2:
+    if len(sys.argv) >= 3:
         filename1 = sys.argv[1]
         filename2 = sys.argv[2]
     else:
@@ -283,13 +283,13 @@ def main():
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2.png")
 
     logging.info("start checking Extract\n")
-    tf=check_and_modify_extract(tree1,tree2)
+    extract_bool=check_and_modify_extract(tree1,tree2)
     logging.info("finished checking Extract\n")
-    logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={tf}\n")
+    logging.info(f"checkExtract({tree1.classname},{tree2.classname})\n={extract_bool}\n")
 
     UniqueDotExporter(tree1, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree1after.png")
     UniqueDotExporter(tree2, nodeattrfunc=lambda n: attr_writer(n)).to_picture("tree2after.png")
-    if tf & compare_nodes(tree1,tree2):
+    if extract_bool & compare_nodes(tree1,tree2):
         print("Stractual Match",end='')
     else:
         print("No Match",end='')
