@@ -4,6 +4,7 @@ import sys
 from anytree.exporter import UniqueDotExporter
 import logging
 import copy
+import inspect
 
 logging.basicConfig(filename="judgeprog.log", level=logging.DEBUG, filemode='w')
 
@@ -30,8 +31,31 @@ class UnDefined:
         else:
             False
 
+def func_log(func):
+    func_struct=inspect.signature(func)
+    def inner(*args,**keywds):
+        args_detail=""
+        count=0
+        args_tuple=args+tuple(keywds.values())
+        for i in func_struct.parameters.values():
+            try:
+                args_detail+=f"{i}:{args_tuple[count]}, "
+            except:
+                break
+            count+=1
+        logging.debug(f"{func.__name__}({args_detail})\n\n")
+        result=func(*args,**keywds)
+        return result
+    return inner
+
+@func_log
 def copy_tree(node):
     """先通り順でcopy 親子関係はcopyしない"""
+    if node is None:
+        return None
+    else:
+        pass
+
     cnode=AnyNode()
     for i in vars(node):
         if ((i=="_NodeMixin__children") |
@@ -43,7 +67,7 @@ def copy_tree(node):
         node1.parent=cnode
     return cnode
 
-
+@func_log
 def insert_child(parentNode, num, nodelist=[]):
     """
     parentNode=子どもの挿入を行いたいノード\n
@@ -63,9 +87,9 @@ def insert_child(parentNode, num, nodelist=[]):
         j=stack.pop()
         j.parent=parentNode
 
+@func_log
 def ast_to_anytree_node(astNode): #astNodeが引数
     """簡素化もここで行う"""
-    logging.debug(f"ast_to_anytree_node(astNode={astNode})\n")
     field_value_dict=vars(astNode)
     anytreeNode=AnyNode(classname=type(astNode).__name__,
                         name=UnDefined(),
@@ -84,8 +108,8 @@ def ast_to_anytree_node(astNode): #astNodeが引数
     return anytreeNode
 
 # ASTノードをanytreeノードに変換する関数
+@func_log
 def convert_ast_to_anytree(ast_node,parent=None):
-    logging.debug(f"convert_ast_to_anytree\n(ast_node={ast_node},\nparent={parent})\n")
     node = ast_to_anytree_node(ast_node)#ここでノード生成されてる
     node.parent=parent
 
@@ -101,6 +125,7 @@ def convert_ast_to_anytree(ast_node,parent=None):
     logging.debug(f"convert_ast_to_anytree return \n{node}\n")
     return node
 
+@func_log
 def open_file_and_make_ast(filename1,filename2):
     with open(filename1, encoding="utf-8") as f1:
         f1_content=f1.read()
@@ -118,8 +143,8 @@ def open_file_and_make_ast(filename1,filename2):
 
     return (tree1,tree2)
 
+@func_log
 def compare_nodes(node1,node2):
-    logging.debug(f"compare_nodes\n(node1={node1}, \nnode2={node2})\n")
     # ノードの要素が一致しているか確認
     if len(node1.__dict__) == len(node2.__dict__):
         c1=node1.__dict__
@@ -153,8 +178,8 @@ def compare_nodes(node1,node2):
     logging.debug(f"compare_nodes return True\n")
     return True
 
+@func_log
 def check_new_func(node1,node2,new_func_dict={}):#node2がnewfuncを持つと仮定
-    logging.debug(f"checkNewfunc\n({node1},{node2})\n")
     if node2.classname=="FunctionDef":
         search_result=search.find(node1, filter_=lambda node: node.name == node2.name)#名前が一致する関数がもう１つの木にないか探索
         if search_result:
@@ -168,29 +193,32 @@ def check_new_func(node1,node2,new_func_dict={}):#node2がnewfuncを持つと仮
             new_func_dict=check_new_func(node1,i,new_func_dict)
 
     return new_func_dict
-        
-def check_func_call(name,node,call_dict={}):
+
+@func_log   
+def check_func_call(name_list,node,call_dict=None):
     """
     name:新たに定義された関数の名前\n
     node:探索対象ノード
     """
-    if call_dict == {}: #call_dictの初期化
-        call_dict[name]=[]
+    if call_dict == None: #call_dictの初期化
+        call_dict=dict()
+        for name in name_list:
+            call_dict[name]=[]
 
-    logging.debug(f"check_func_call\n({name},{node})\n")
+    
     if node.classname=="Call":
         for i in node.children:
-            if i.id == name:
-                call_dict[name].append(node)
-                return call_dict
+            for name in name_list:
+                if i.id == name:
+                    call_dict[name].append(node)
+                    return call_dict
     else:
         for i in node.children: #再帰探索
-            check_func_call(name,i,call_dict)
+            check_func_call(name_list,i,call_dict)
     return call_dict
 
+@func_log
 def check_func_body(body_dict,tree_node):#tryerror付加予定
-    logging.debug(f"check_func_body\n({body_dict},{tree_node})\n")
-
     flag=0
     iter_body=0
     delete_tree_list=[]
@@ -201,8 +229,6 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
                 flag=1
                 delete_tree_list.append(i)
                 if iter_body==len(body):
-                    for j in delete_tree_list:
-                        del j
                     return True
             else:
                 if flag==1:
@@ -212,7 +238,8 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
                 return True
     return False
 
-def modify_extract(new_func_dict, call_tree_dict, body):
+@func_log
+def modify_extract(new_func_dict, call_tree_dict, body_dict):
     for new_func_node in new_func_dict.values():
         new_func_node.parent=None
         for n in call_tree_dict[new_func_node.name]:
@@ -220,36 +247,42 @@ def modify_extract(new_func_dict, call_tree_dict, body):
             temp=exprnode.parent
             insertNum=temp.children.index(exprnode)
             exprnode.parent=None
-            insert_child(temp, insertNum, body)
+            insert_child(temp, insertNum, body_dict[new_func_node.name])
 
+@func_log
 def check_extract(t1,t2):
-    logging.debug(f"checkExtract\n({t1},{t2})\n")
-    new_func_dict=check_new_func(t1,t2) #新たに定義された関数の定義木を代入
+    new_func_dict=check_new_func(t1,t2) #新たに定義された関数を発見し, 辞書に登録
+
     if new_func_dict=={}:
         return False
-    for new_func_node in new_func_dict.values():
-        call_tree_dict=check_func_call(new_func_node.name,t2)
+    else:
+        pass
+
+    call_tree_dict=check_func_call(new_func_dict.keys(),t2)
     
     logging.info(f"call_tree_dict=\n{call_tree_dict}\n")
     if call_tree_dict=={}: #新たに定義された関数の定義を発見
         return False
     
     #関数のボディを抽出する処理
+    body_dict={}
     body=[]
     for new_func_node in new_func_dict.values():
         for i in new_func_node.children:
             if i.classname!="arguments":
-                body.append(i)
+               body.append(i)
+        body_copy=copy.deepcopy(body)
+        body_dict.setdefault(new_func_node.name,body_copy)
 
-        temp=copy.deepcopy(body)
         t1copy=copy.deepcopy(t1)
 
-        bodytree=check_func_body({new_func_node.name:temp},t1copy)
+        bodytree=check_func_body(body_dict,t1copy)
 
         if not bodytree:
             return False#上で発見した関数のボディを削除された部分木の中から発見
+        body.clear()
 
-    result=(new_func_dict, call_tree_dict, body)
+    result=(new_func_dict, call_tree_dict, body_dict)
     if result==():
         return False
     else:
