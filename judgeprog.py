@@ -204,7 +204,6 @@ def check_func_call(name_list,node,call_dict=None):
         call_dict=dict()
         for name in name_list:
             call_dict[name]=[]
-
     
     if node.classname=="Call":
         for i in node.children:
@@ -213,8 +212,9 @@ def check_func_call(name_list,node,call_dict=None):
                     call_dict[name].append(node)
                     return call_dict
     else:
-        for i in node.children: #再帰探索
-            check_func_call(name_list,i,call_dict)
+        pass
+    for i in node.children: #再帰探索
+        check_func_call(name_list,i,call_dict)
     return call_dict
 
 @func_log
@@ -239,16 +239,33 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
     return False
 
 @func_log
-def modify_extract(new_func_dict, call_tree_dict, body_dict):
+def check_func_return(return_dict,tree_node):
+    for return_expr in return_dict.values():
+        for i in tree_node.children:
+            if compare_nodes(i,return_expr):
+                return True
+            else:
+                pass
+            if check_func_return(return_dict,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
+                return True
+    return False
+
+@func_log
+def modify_extract(new_func_dict, call_tree_dict, body_dict, return_dict):
     for new_func_node in new_func_dict.values():
         new_func_node.parent=None
         for n in call_tree_dict[new_func_node.name]:
-            exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
-            temp=exprnode.parent
-            insertNum=temp.children.index(exprnode)
-            exprnode.parent=None
-            insert_child(temp, insertNum, body_dict[new_func_node.name])
-
+            if n.parent.classname=="Expr":
+                exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
+                temp=exprnode.parent
+                insert_num=temp.children.index(exprnode)
+                exprnode.parent=None
+                insert_child(temp, insert_num, body_dict[new_func_node.name])
+            else:
+                parent_node=n.parent
+                insert_num=parent_node.children.index(n)
+                n.parent=None
+                insert_child(parent_node, insert_num, [return_dict[new_func_node.name]])
 @func_log
 def check_extract(t1,t2):
     new_func_dict=check_new_func(t1,t2) #新たに定義された関数を発見し, 辞書に登録
@@ -266,23 +283,44 @@ def check_extract(t1,t2):
     
     #関数のボディを抽出する処理
     body_dict={}
+    return_dict={}
     body=[]
+    return_tree=None
     for new_func_node in new_func_dict.values():
         for i in new_func_node.children:
-            if i.classname!="arguments":
-               body.append(i)
+            if i.classname=="Return":
+                return_tree=i.children[0]
+            elif i.classname!="arguments":
+                body.append(i)
+            else:
+                pass
+        return_tree_copy=copy.deepcopy(return_tree)
         body_copy=copy.deepcopy(body)
+        return_dict.setdefault(new_func_node.name,return_tree_copy)
         body_dict.setdefault(new_func_node.name,body_copy)
 
         t1copy=copy.deepcopy(t1)
+        bodytree=True
+        for i in call_tree_dict.values():
+            if i==[]:
+                continue
+            for j in i:
+                if j.parent.classname=="Expr":
+                    bodytree=check_func_body(body_dict,t1copy)
+                    break
 
-        bodytree=check_func_body(body_dict,t1copy)
-
+        for i in call_tree_dict.values():
+            if i==[]:
+                continue
+            for j in i:
+                if j.parent.classname!="Expr":
+                    bodytree=check_func_return(return_dict,t1copy)
+                    break
         if not bodytree:
             return False#上で発見した関数のボディを削除された部分木の中から発見
         body.clear()
 
-    result=(new_func_dict, call_tree_dict, body_dict)
+    result=(new_func_dict, call_tree_dict, body_dict, return_dict)
     if result==():
         return False
     else:
