@@ -57,11 +57,15 @@ def copy_tree(node):
         pass
 
     cnode=AnyNode()
-    for i in vars(node):
-        if ((i=="_NodeMixin__children") |
-            (i=="_NodeMixin__parent")):
-                continue
-        cnode.__dict__.update({i:node.__dict__[i]})
+    try:
+        for i in vars(node):
+            if ((i=="_NodeMixin__children") |
+                (i=="_NodeMixin__parent")):
+                    continue
+            cnode.__dict__.update({i:node.__dict__[i]})
+    except TypeError as e:
+        print(f"{e}:vars() argument must have __dict__ attribute\n(node={node})")
+        exit(1)
     for t in node.children:
         node1=copy_tree(t)
         node1.parent=cnode
@@ -240,22 +244,21 @@ def check_func_body(body_dict,tree_node):#tryerror付加予定
 
 @func_log
 def check_func_return(return_dict,tree_node):
+    if tree_node is None:
+        return False
     for return_expr in return_dict.values():
-        for i in tree_node.children:
-            if compare_nodes(i,return_expr):
-                return True
-            else:
-                pass
-            if check_func_return(return_dict,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
-                return True
-    return False
+        if search.find(return_expr):
+            pass
+        else:
+            return False     
+    return True
 
 @func_log
 def modify_extract(new_func_dict, call_tree_dict, body_dict, return_dict):
     for new_func_node in new_func_dict.values():
         new_func_node.parent=None
         for n in call_tree_dict[new_func_node.name]:
-            if n.parent.classname=="Expr":
+            if (n.parent.classname=="Expr") & (body_dict[new_func_node.name] is not None):
                 exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
                 temp=exprnode.parent
                 insert_num=temp.children.index(exprnode)
@@ -264,8 +267,40 @@ def modify_extract(new_func_dict, call_tree_dict, body_dict, return_dict):
             else:
                 parent_node=n.parent
                 insert_num=parent_node.children.index(n)
-                n.parent=None
                 insert_child(parent_node, insert_num, [return_dict[new_func_node.name]])
+                node_in_Call=n
+                while node_in_Call.parent.classname!="Module":
+                    node_in_Call=node_in_Call.parent
+                insert_num=node_in_Call.parent.children.index(node_in_Call)
+                insert_child(node_in_Call.parent, insert_num, body_dict[new_func_node.name]) if body_dict[new_func_node.name] is not None else None
+                n.parent=None
+
+@func_log
+def variable_unification(tree_root,variable_name,arg_node):
+    #探索時該当する変数ノードをelementに置き換える
+
+    if tree_root.id==variable_name:
+        copied_arg_node=copy_tree(arg_node)
+        copied_arg_node.parent=tree_root.parent
+        tree_root.parent=None
+        result=copied_arg_node
+    else:
+        if tree_root.children:
+            for t in tree_root.children:
+                result=variable_unification(t,variable_name,arg_node)
+        else:
+            return tree_root
+    return result
+
+@func_log
+def multiple_variable_unification(tree_root,variable_name_list,arg_node_list):
+    if len(variable_name_list)!=len(arg_node_list):
+        raise SystemError("仮引数と実引数の数が一致していません")
+    else:
+        for i,j in zip(variable_name_list,arg_node_list):
+            tree_root=variable_unification(tree_root,i,j)
+    return tree_root
+
 @func_log
 def check_extract(t1,t2):
     new_func_dict=check_new_func(t1,t2) #新たに定義された関数を発見し, 辞書に登録
@@ -286,6 +321,7 @@ def check_extract(t1,t2):
     return_dict={}
     body=[]
     return_tree=None
+    variable_name_list=[]
     for new_func_node in new_func_dict.values():
         for i in new_func_node.children:
             if i.classname=="Return":
@@ -293,9 +329,21 @@ def check_extract(t1,t2):
             elif i.classname!="arguments":
                 body.append(i)
             else:
-                pass
+                for j in i.children:
+                    variable_name_list.append(j.arg)
         return_tree_copy=copy.deepcopy(return_tree)
         body_copy=copy.deepcopy(body)
+        #単一化処理追加
+        for i in call_tree_dict.values():
+            for call_tree in i:
+                arg_node_list=[]
+                for j in call_tree.children:
+                    if j.classname != "Name":
+                        arg_node_list.append(j)
+                #returntree追加
+                body_copy=multiple_variable_unification(body_copy,variable_name_list,arg_node_list) if body_copy else None
+                return_tree_copy=multiple_variable_unification(return_tree_copy,variable_name_list,arg_node_list)
+                del arg_node_list
         return_dict.setdefault(new_func_node.name,return_tree_copy)
         body_dict.setdefault(new_func_node.name,body_copy)
 
