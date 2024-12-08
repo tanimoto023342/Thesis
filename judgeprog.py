@@ -25,11 +25,24 @@ class UnDefined:
     def __str__(self):
         return "UnDefined"
     
-    def __eq__(self, other):
+    def __is__(self, other):
         if isinstance(other, UnDefined):
             return True
         else:
             False
+
+def custom_repr(self, args=None, nameblacklist=None):
+    classname = self.__class__.__name__
+    args = args or []
+    nameblacklist = nameblacklist or []
+    for key, value in filter(
+        lambda item: not item[0].startswith("_") and item[0] not in nameblacklist and self.__dict__[item[0]] is not UnDefined(),
+        sorted(self.__dict__.items(), key=lambda item: item[0]),
+    ):
+        args.append("%s=%r" % (key, value))
+    return "%s(%s)" % (classname, ", ".join(args))
+
+AnyNode.__repr__=custom_repr
 
 def func_log(func):
     func_struct=inspect.signature(func)
@@ -39,7 +52,10 @@ def func_log(func):
         args_tuple=args+tuple(keywds.values())
         for i in func_struct.parameters.values():
             try:
-                args_detail+=f"{i}:{args_tuple[count]}, "
+                if not (args_tuple[count] is UnDefined()):
+                    args_detail+=f"{i}:{args_tuple[count]}, "
+                else:
+                    pass
             except:
                 break
             count+=1
@@ -247,7 +263,7 @@ def check_func_return(return_dict,tree_node):
     if tree_node is None:
         return False
     for return_expr in return_dict.values():
-        if search.find(return_expr):
+        if search.findall(return_expr):
             pass
         else:
             return False     
@@ -281,7 +297,8 @@ def variable_unification(tree_root,variable_name,arg_node):
 
     if tree_root.id==variable_name:
         copied_arg_node=copy_tree(arg_node)
-        copied_arg_node.parent=tree_root.parent
+        insert_num=tree_root.parent.children.index(tree_root)
+        insert_child(tree_root.parent,insert_num,[copied_arg_node])
         tree_root.parent=None
         result=copied_arg_node
     else:
@@ -293,13 +310,15 @@ def variable_unification(tree_root,variable_name,arg_node):
     return result
 
 @func_log
-def multiple_variable_unification(tree_root,variable_name_list,arg_node_list):
+def multiple_variable_unification(tree_root_list,variable_name_list,arg_node_list):
     if len(variable_name_list)!=len(arg_node_list):
         raise SystemError("仮引数と実引数の数が一致していません")
     else:
-        for i,j in zip(variable_name_list,arg_node_list):
-            tree_root=variable_unification(tree_root,i,j)
-    return tree_root
+        if isinstance(tree_root_list, list) and tree_root_list:
+            for tree_root in tree_root_list:
+                for i,j in zip(variable_name_list,arg_node_list):
+                    tree_root=variable_unification(tree_root,i,j)
+    return tree_root_list
 
 @func_log
 def check_extract(t1,t2):
@@ -333,14 +352,12 @@ def check_extract(t1,t2):
                     variable_name_list.append(j.arg)
         return_tree_copy=copy.deepcopy(return_tree)
         body_copy=copy.deepcopy(body)
-        #単一化処理追加
         for i in call_tree_dict.values():
             for call_tree in i:
                 arg_node_list=[]
                 for j in call_tree.children:
                     if j.classname != "Name":
                         arg_node_list.append(j)
-                #returntree追加
                 body_copy=multiple_variable_unification(body_copy,variable_name_list,arg_node_list) if body_copy else None
                 return_tree_copy=multiple_variable_unification(return_tree_copy,variable_name_list,arg_node_list)
                 del arg_node_list
