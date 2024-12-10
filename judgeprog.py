@@ -1,9 +1,9 @@
 import ast
-from anytree import AnyNode, search
 import sys
-from anytree.exporter import UniqueDotExporter
 import logging
 import copy
+from anytree import AnyNode, search
+from anytree.exporter import UniqueDotExporter
 import inspect
 
 logging.basicConfig(filename="judgeprog.log", level=logging.DEBUG, filemode='w')
@@ -29,7 +29,7 @@ class UnDefined:
         if isinstance(other, UnDefined):
             return True
         else:
-            False
+            return False
 
 class container_for_func_info:
     def __init__(self,body_tree_list=[],return_tree=None):
