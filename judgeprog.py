@@ -355,6 +355,8 @@ def variable_unification(tree_root,variable_name,arg_node):
     else:
         if tree_root.children:
             for t in tree_root.children:
+                if tree_root.classname=="Subscript" and t==tree_root.children[0]:
+                    continue #リストのブラケット構文に対する例外処理
                 result=variable_unification(t,variable_name,arg_node)
         else:
             return tree_root
