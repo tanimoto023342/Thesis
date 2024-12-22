@@ -4,8 +4,8 @@ import logging
 import copy
 from anytree import AnyNode, search
 from anytree.exporter import UniqueDotExporter
-import inspect
 from myclass import UnDefined, func_info
+from utilfunc import func_log
 
 logging.basicConfig(filename="judgeprog.log", level=logging.DEBUG, filemode='w')
 
@@ -24,26 +24,6 @@ def custom_repr(self, args=None, nameblacklist=None):
     return "%s(%s)" % (classname, ", ".join(args))
 
 AnyNode.__repr__=custom_repr
-
-def func_log(func):
-    func_struct=inspect.signature(func)
-    def inner(*args,**keywds):
-        args_detail=""
-        count=0
-        args_tuple=args+tuple(keywds.values())
-        for i in func_struct.parameters.values():
-            try:
-                if not (args_tuple[count] is UnDefined()):
-                    args_detail+=f"{i}:{args_tuple[count]}, "
-                else:
-                    pass
-            except:
-                break
-            count+=1
-        logging.debug(f"{func.__name__}({args_detail})\n\n")
-        result=func(*args,**keywds)
-        return result
-    return inner
 
 @func_log
 def copy_tree(node):
@@ -319,8 +299,9 @@ def check_extract(t1,t2):
     #関数のボディを抽出する処理
     body=[]
     return_tree=None
-    variable_name_list=[]
     for func_info_ in func_info_dict.values():
+        variable_name_list=[]
+        logging.debug(f"{func_info_}")
         node=func_info_.FuncDef_node
         for i in node.children:
             if i.classname=="Return":
