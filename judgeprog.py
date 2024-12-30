@@ -98,9 +98,9 @@ def convert_ast_to_anytree(ast_node,parent=None):
         if isinstance(field_value, ast.AST):
             convert_ast_to_anytree(field_value,parent=any_node)
         elif isinstance(field_value, list):
-            for item in field_value:
-                if isinstance(item, ast.AST):
-                    convert_ast_to_anytree(item, parent=any_node)
+            for item_in_list in field_value:
+                if isinstance(item_in_list, ast.AST):
+                    convert_ast_to_anytree(item_in_list, parent=any_node)
         else:
             pass
     logging.debug(f"convert_ast_to_anytree return \n{any_node}\n")
