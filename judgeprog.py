@@ -91,7 +91,7 @@ def ast_to_any_node(astNode): #astNodeが引数
 # ASTノードをanytreeノードに変換する関数
 @func_log
 def convert_ast_to_anytree(ast_node,parent=None):
-    node = ast_to_any_node(ast_node)#ここでノード生成されてる
+    node = ast_to_anynode(ast_node)#ここでノード生成されてる
     node.parent=parent
 
     for _, value in ast.iter_fields(ast_node):
