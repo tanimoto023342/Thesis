@@ -69,7 +69,7 @@ def insert_child(parentNode, num, nodelist=[]):
         j.parent=parentNode
 
 @func_log
-def ast_to_anytree_node(astNode): #astNodeが引数
+def ast_to_any_node(astNode): #astNodeが引数
     """簡素化もここで行う"""
     field_value_dict=vars(astNode)
     anytreeNode=AnyNode(classname=type(astNode).__name__,
@@ -91,7 +91,7 @@ def ast_to_anytree_node(astNode): #astNodeが引数
 # ASTノードをanytreeノードに変換する関数
 @func_log
 def convert_ast_to_anytree(ast_node,parent=None):
-    node = ast_to_anytree_node(ast_node)#ここでノード生成されてる
+    node = ast_to_any_node(ast_node)#ここでノード生成されてる
     node.parent=parent
 
     for _, value in ast.iter_fields(ast_node):
