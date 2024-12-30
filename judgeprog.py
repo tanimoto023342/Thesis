@@ -91,20 +91,20 @@ def ast_to_any_node(astNode): #astNodeが引数
 # ASTノードをanytreeノードに変換する関数
 @func_log
 def convert_ast_to_anytree(ast_node,parent=None):
-    node = ast_to_anynode(ast_node)#ここでノード生成されてる
-    node.parent=parent
+    any_node = ast_to_any_node(ast_node)#ここでノード生成されてる
+    any_node.parent=parent
 
-    for _, value in ast.iter_fields(ast_node):
-        if isinstance(value, ast.AST):
-            convert_ast_to_anytree(value,parent=node)
-        elif isinstance(value, list):
-            for item in value:
+    for _, field_value in ast.iter_fields(ast_node):
+        if isinstance(field_value, ast.AST):
+            convert_ast_to_anytree(field_value,parent=any_node)
+        elif isinstance(field_value, list):
+            for item in field_value:
                 if isinstance(item, ast.AST):
-                    convert_ast_to_anytree(item, parent=node)
+                    convert_ast_to_anytree(item, parent=any_node)
         else:
             pass
-    logging.debug(f"convert_ast_to_anytree return \n{node}\n")
-    return node
+    logging.debug(f"convert_ast_to_anytree return \n{any_node}\n")
+    return any_node
 
 @func_log
 def open_file_and_make_ast(filename1,filename2):
