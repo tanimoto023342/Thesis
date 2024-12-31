@@ -72,7 +72,7 @@ def insert_child(parentNode, num, nodelist=[]):
 def ast_to_any_node(ast_node): #astNodeが引数
     """簡素化もここで行う"""
     field_value_dict=vars(ast_node)
-    anytreeNode=AnyNode(classname=type(ast_node).__name__,
+    any_node=AnyNode(classname=type(ast_node).__name__,
                         name=UnDefined(),
                         id=UnDefined(),
                         value=UnDefined(),
@@ -81,12 +81,12 @@ def ast_to_any_node(ast_node): #astNodeが引数
                         _NodeMixin__children=[],
                         )
     for i in field_value_dict:
-        if i in anytreeNode.__dict__.keys():
+        if i in any_node.__dict__.keys():
             if isinstance(field_value_dict[i], ast.AST):
                 continue
-            anytreeNode.__dict__.update({i:field_value_dict[i]})#属性追加(AST_でanytreeの元々の属性と区別)
-    logging.debug(f"ast_to_anytree_node return \n{anytreeNode}\n")
-    return anytreeNode
+            any_node.__dict__.update({i:field_value_dict[i]})#属性追加(AST_でanytreeの元々の属性と区別)
+    logging.debug(f"ast_to_anytree_node return \n{any_node}\n")
+    return any_node
 
 # ASTノードをanytreeノードに変換する関数
 @func_log
