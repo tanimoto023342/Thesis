@@ -69,10 +69,10 @@ def insert_child(parentNode, num, nodelist=[]):
         j.parent=parentNode
 
 @func_log
-def ast_to_any_node(astNode): #astNodeが引数
+def ast_to_any_node(ast_node): #astNodeが引数
     """簡素化もここで行う"""
-    field_value_dict=vars(astNode)
-    anytreeNode=AnyNode(classname=type(astNode).__name__,
+    field_value_dict=vars(ast_node)
+    anytreeNode=AnyNode(classname=type(ast_node).__name__,
                         name=UnDefined(),
                         id=UnDefined(),
                         value=UnDefined(),
