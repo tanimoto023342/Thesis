@@ -201,13 +201,12 @@ def check_func_body(body_list,tree_node):#tryerror付加予定
         if compare_nodes(i,body_list[iter_body]):
             iter_body+=1
             flag=1
-            delete_tree_list.append(i)
             if iter_body==len(body_list):
                 return True
         else:
             if flag==1:
                 iter_body=0
-                delete_tree_list.clear()
+                flag=0
         if check_func_body(body_list,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
             return True
     return False
