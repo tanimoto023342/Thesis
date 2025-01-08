@@ -143,7 +143,6 @@ def compare_nodes(node1,node2):
         logging.debug(f"compare_nodes return False\nlen:{len(node1.__dict__)} {len(node2.__dict__)}\n{node1.__dict__}\n{node2.__dict__}\n")
         return False
     
-    
     # 子ノードの数が一致しているか確認
     if len(node1.children) != len(node2.children):
         logging.debug(f"compare_nodes return False\n")
@@ -194,20 +193,24 @@ def check_func_call(name_list,func_info_dict,node):
 
 @func_log
 def check_func_body(body_list,tree_node):#tryerror付加予定
-    flag=0
     iter_body=0
-    delete_tree_list=[]
-    for i in tree_node.children:
-        if compare_nodes(i,body_list[iter_body]):
+    if hasattr(tree_node,"children"):
+        pass
+    else:
+        return False
+    for child_num in range(len(tree_node.children)):
+        if compare_nodes(tree_node.children[child_num],body_list[iter_body]):
             iter_body+=1
-            flag=1
-            if iter_body==len(body_list):
+            for j in range(child_num+1,child_num+len(body_list)):
+                if compare_nodes(tree_node.children[j],body_list[iter_body]):
+                    iter_body+=1
+                    continue
+                else:
+                    iter_body=0
+                    break
+            else:
                 return True
-        else:
-            if flag==1:
-                iter_body=0
-                flag=0
-        if check_func_body(body_list,i): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
+        if check_func_body(body_list,tree_node.children[child_num]): #真偽に関わらず再帰そのものは行う(↓の層を必ず確認したいため)
             return True
     return False
 
@@ -230,12 +233,13 @@ def modify_extract(func_info_dict):
             body_list=func_info_.func_tree_dict[n].body_tree_list
             if (n.parent.classname=="Expr") & (body_list is not None):
                 exprnode=n.parent#呼び出しを示す文の木の先頭となるexprノードを取得
-                temp=exprnode.parent
-                insert_num=temp.children.index(exprnode)
+                node_above_expr=exprnode.parent
+                insert_num=node_above_expr.children.index(exprnode)
                 exprnode.parent=None
-                insert_child(temp, insert_num,body_list)
+                insert_child(node_above_expr, insert_num,body_list)
             else:
                 parent_node=n.parent
+                n.parent=None
                 insert_num=parent_node.children.index(n)
                 insert_child(parent_node, insert_num, [func_info_.func_tree_dict[n].return_tree])
                 node_in_Call=n
@@ -243,7 +247,6 @@ def modify_extract(func_info_dict):
                     node_in_Call=node_in_Call.parent
                 insert_num=node_in_Call.parent.children.index(node_in_Call)
                 insert_child(node_in_Call.parent, insert_num, body_list) if body_list is not None else None
-                n.parent=None
 
 @func_log
 def variable_unification(tree_root,variable_name,arg_node):
