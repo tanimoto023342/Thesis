@@ -6,6 +6,7 @@ from anytree import AnyNode, search
 from anytree.exporter import UniqueDotExporter
 from myclass import UnDefined, func_info
 from utilfunc import func_log
+from AnyTreeExporter import attr_writer
 
 logging.basicConfig(filename="judgeprog.log", level=logging.DEBUG, filemode='w')
 
@@ -348,19 +349,6 @@ def check_extract(t1,t2):
         body.clear()
 
     return func_info_dict
-
-def attr_writer(node):
-    text_in_label=""
-    node_attr=vars(node)
-
-    for i in node_attr:
-        if ((i=="_NodeMixin__children") |
-            (i=="_NodeMixin__parent")):
-            continue
-        if node_attr[i] is not UnDefined():
-            text_in_label+=f"{i}:{node_attr[i]}\n"
-
-    return 'label=\"'+text_in_label+'\"'
 
 def main():
     if len(sys.argv) >= 3:
