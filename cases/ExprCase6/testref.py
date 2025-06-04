@@ -1,0 +1,20 @@
+def func(x,y):
+    a=x*y
+    return a
+
+def func1(x,y):
+    b=x/y
+    return b
+
+def func2(x,y):
+    c=x//y
+    return c
+
+def func3(x,y):
+    d=x%y
+    return d
+
+print(func(2,3))
+print(func1(4,2))
+print(func2(5,2))
+print(func3(5,2))

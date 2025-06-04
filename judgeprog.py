@@ -201,12 +201,12 @@ def modify_extract(func_info_dict):
                 insert_child(node_above_expr, insert_num,body_list)
             else:
                 parent_node=n.parent
-                n.parent=None
                 insert_num=parent_node.children.index(n)
                 insert_child(parent_node, insert_num, [func_info_.func_tree_dict[n].return_tree])
                 node_in_Call=n
                 while node_in_Call.parent.classname!="Module":
                     node_in_Call=node_in_Call.parent
+                n.parent=None
                 insert_num=node_in_Call.parent.children.index(node_in_Call)
                 insert_child(node_in_Call.parent, insert_num, body_list) if body_list is not None else None
 
@@ -355,7 +355,7 @@ def main():
     modified_tree_match_bool=compare_nodes(tree1,tree2)
 
     if modified_tree_match_bool==True:
-        print("Stractual Match",end='')
+        print("Structual Match",end='')
     else:
         print("No Match",end='')
 

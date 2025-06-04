@@ -1,6 +1,8 @@
 import ast
 import sys
+from anytree.exporter import UniqueDotExporter
 from myclass import UnDefined
+from AnyTreeConverter import convert_ast_to_anytree
 
 def attr_writer(node):
     text_in_label=""
@@ -24,5 +26,9 @@ if __name__ == "__main__":
     with open(filename,encoding="utf-8") as f:
         f_content=f.read()
         parsed_ast=ast.parse(f_content)
+
+    anytree=convert_ast_to_anytree(parsed_ast)
+    UniqueDotExporter(anytree, nodeattrfunc=lambda n: attr_writer(n)).to_picture("test.png")
     
+
 
